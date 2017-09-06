@@ -1,0 +1,9 @@
+@import '../../styles/mixins/icons';
+
+.do-file-upload {
+  &-link {
+    cursor: pointer; display: flex; line-height: 1;
+    &:before { @include paperclip-icon(#028dd8); content: ''; display: inline-block; width: 14px; height: 14px; margin-right: 5px; }
+  }
+  &-text { color: #028dd8;  border-bottom: 1px dotted; display: inline-block; }
+}

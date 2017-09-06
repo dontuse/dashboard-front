@@ -1,0 +1,11 @@
+@import '../styles/mixins/icons';
+
+.do-send-order-to-email {
+  &-control-box { display: flex; }
+  &-input { margin-right: 20px; flex: 0 0 310px; }
+  &-send-email {
+    @include fa-paper-plane-icon(#9a9a9a); width: 12px; height: 14px; cursor: pointer; margin-right: 10px;
+    &:hover { @include fa-paper-plane-icon(#028dd8); }
+  }
+  &-label { margin-bottom: 10px; }
+}

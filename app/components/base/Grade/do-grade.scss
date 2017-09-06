@@ -1,0 +1,14 @@
+.do-grade {
+  display: flex;
+  &-item {
+    margin-right: 2px; background: #c1c1c1; width: 15px; height: 15px;
+    &.is-active {
+       background: #ff8941;
+       &:nth-child(n+1) { background: #ff8941; }
+       &:nth-child(n+2) { background: #ffcd50; }
+       &:nth-child(n+3) { background: #cbc11d; }
+       &:nth-child(n+4) { background: #87c820; }
+       &:nth-child(n+5) { background: #21be10; }
+     }
+  }
+}

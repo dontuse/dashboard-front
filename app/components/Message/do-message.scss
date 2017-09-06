@@ -1,0 +1,18 @@
+@import '../styles/mixins/icons';
+
+.do-message {
+  display: flex;
+  &-message { word-break: break-all; }
+  &-photo {
+    flex: 0 0 35px; width: 35px; height: 35px; border-radius: 100px; background: #eeeeee; justify-content: center; align-items: center;
+    &.is-not:after {
+      @include fa-user-icon(#c1c1c1); content: ''; width: 13px; height: 15px; display: block; margin: 0 auto; position: relative; top: 10px;
+    }
+  }
+  &-main { margin: 0 12px; width: 100%; }
+  &-sender-name { font-weight: bold; font-size: 13px; }
+  &-head { margin-bottom: 5px; display: flex; }
+  &-time-box { margin-left: auto; color: #9a9a9a; }
+  &-date { margin-right: 5px; }
+  &-file { margin-top: 10px; }
+}

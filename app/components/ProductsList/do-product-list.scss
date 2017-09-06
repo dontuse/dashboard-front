@@ -1,0 +1,9 @@
+.do-product-list {
+  &-table { width: 100%; border-collapse: collapse; }
+  &-td {
+    border: 1px solid #e0e0e0; padding: 25px;
+    &:nth-child(1) { width: 60%; border-left: 0; }
+    &:last-child { border-right: 0; }
+  }
+  &-total-box { padding: 20px; display: flex; justify-content: space-between; font-size: 14px; }
+}

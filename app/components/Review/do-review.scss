@@ -1,0 +1,10 @@
+.do-review {
+  color: #61656f;
+  &-name { margin-bottom: 15px; font-size: 13px; color: #1f2532; }
+  &-rating-box { margin-bottom: 15px; display: flex;  align-items: center;  justify-content: space-between; font-size: 12px; }
+  &-time-box { margin-bottom: 20px; font-size: 12px; }
+  &-full-rating-box { margin-bottom: 25px; }
+  &-text { font-size: 13px; overflow-x: auto; }
+  &-images { display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 15px; }
+  &-image { border: solid #e0e0e0 1px; flex: 0 0 115px; display: flex; justify-content: center; align-items: center; margin-bottom: 10px; }
+}

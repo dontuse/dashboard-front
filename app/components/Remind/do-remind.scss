@@ -1,0 +1,55 @@
+@import '../styles/mixins/icons';
+
+.do-remind {
+  $root: &;
+  background: #f2ffc4; padding: 15px;
+  &-date-box {
+    &:before { @include clock-o-icon(#829a3a); content: ''; width: 13px; height: 13px; display: inline-block; margin-right: 10px; margin-top: -2px; vertical-align: middle; line-height: 1; }
+  }
+  &-control-box { display: flex; margin-top: 10px; }
+  &-text { margin-top: 10px; overflow: hidden; text-overflow: ellipsis; }
+  &-action {
+    width: 20px; height: 20px; border-radius: 3px; background: #fff; margin-right: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+    &:after { content: ''; width: 13px; height: 13px; display: block; }
+
+    &.is-done:after { @include check-icon(#a3bd49); }
+    &.is-done:hover { background-color: #a3bd49; }
+    &.is-done:hover:after { @include check-icon(#fff); }
+
+    &.is-edit:after { @include pencil-icon(#9a9a9a); }
+    &.is-edit:hover { background-color: #64a0d7; }
+    &.is-edit:hover:after { @include pencil-icon(#fff); }
+
+    &.is-cancel:after { @include close-icon(#dc6263); }
+    &.is-cancel:hover { background-color: #dc6263; }
+    &.is-cancel:hover:after { @include close-icon(#fff); background-color: #dc6263; }
+  }
+  &-status { margin-top: 10px; font-size: 13px; color: #9a9a9a; }
+  &.is-canceled {
+    background: #eeeeee;
+    #{$root}-date-box {
+      color: #61656f;
+      &:before { @include clock-o-icon(#61656f); }
+    }
+    #{$root}-status {
+      &:before { @include close-icon(#9a9a9a); content: ''; width: 13px; height: 13px;  margin-right: 5px; margin-top: -3px; color: #9a9a9a; display: inline-block; vertical-align: middle; }
+    }
+  }
+  &.is-done {
+    background: #eeeeee;
+    #{$root}-date-box {
+      color: #61656f;
+      &:before { @include clock-o-icon(#61656f); }
+    }
+    #{$root}-status {
+      &:before { @include check-icon(#9a9a9a); content: ''; width: 13px; height: 13px;  margin-right: 5px; margin-top: -3px; color: #9a9a9a; display: inline-block; vertical-align: middle; }
+    }
+  }
+  &.is-overdue {
+    background: #ffd2d2;
+    #{$root}-date-box {
+      color: #c44446;
+      &::before { @include clock-o-icon(#c44446); }
+    }
+  }
+}

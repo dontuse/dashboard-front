@@ -1,0 +1,10 @@
+@import '../styles/mixins/icons';
+
+.do-doer {
+  height: 29px; display: flex; align-items: center;
+  &-photo {
+    height: 30px; width: 30px; background: #e0e0e0; border-radius: 100px; margin-right: 10px;
+    &.is-not:after { @include fa-user-icon(#c1c1c1); content: ''; width: 13px; height: 15px; display: block; margin: 0 auto; position: relative; top: 8px; }
+  }
+  &-name { font-size: 12px; color: #1f2532; }
+}

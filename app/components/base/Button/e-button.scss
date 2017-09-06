@@ -1,0 +1,17 @@
+.e-button {
+  box-sizing: border-box; line-height: 1.42857143; border-radius: 3px; background-color: transparent; display: inline-block; color: #028dd8; cursor: pointer; padding: 6px 20px; white-space: nowrap; border: 1px solid; font-style: inherit; font-size: 12px; text-align: center; transition: background .2s, color .2s, border, color .2s; font-family: 'OpenSans'; outline: none;
+  &:hover { background: #028dd8; color: #fff; border-color: #028dd8; }
+  &:disabled {
+    opacity: 0.6; cursor: not-allowed;
+    &:hover { background-color: #028dd8; }
+  }
+  &.is-good {
+    border-color: #9fc54d; color: #a3bd49;
+    &:hover { background: #a3bd49; color: #fff; }
+  }
+  &.is-cancel {
+    background-color: #fff; border-color: #c1c1c1; color: #9A9A9A;
+    &:hover { background-color: #EEEEEE; border-color: #EEEEEE; color: #61656F; }
+  }
+  &.is-big-size { padding: 10px 30px; }
+}

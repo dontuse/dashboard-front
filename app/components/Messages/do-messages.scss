@@ -1,0 +1,7 @@
+.do-messages {
+  background: #ffffff; padding: 20px;
+  &-message {
+    margin-bottom: 10px;
+    &.is-dialog { margin-bottom: 25px; }
+  }
+}

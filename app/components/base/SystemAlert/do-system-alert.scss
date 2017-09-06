@@ -1,0 +1,4 @@
+.do-system-alert {
+  background: #e3f5ff; padding: 30px; border-left: 2px solid #028dd8; font-size: 14px; line-height: 1.43; font-style: italic; color: #5992b1;
+  &.is-attention { background: #feffdf; border-left-color: #ffcd50; color: #ba8c4a; }
+ }

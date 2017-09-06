@@ -1,0 +1,43 @@
+@import '../styles/mixins/icons';
+$gray-color: #e4e4e4;
+$icon-color: #bcbcbc;
+$blue-icon-color: #06c;
+$hover-color: #666;
+
+.do-message-templates {
+  $root: &;
+  font-size: 12px; position: relative;
+  & * { box-sizing: border-box; }
+  &-head-box { line-height: 30px; height: 30px; }
+  &-link,
+  &-link:visited {
+    border-bottom: 1px dashed; color: #06c; display: inline-block; text-decoration: none; line-height: 1; cursor: pointer;
+    &:hover { text-decoration: none; color: #f30; }
+  }
+  &-loader { display: inline-block; margin-left: 10px; vertical-align: middle; }
+  &-drop-down {}
+  &-box { overflow-x: hidden; overflow-y: auto; max-height: 200px; border-bottom: 1px solid $gray-color; }
+  &-new-box {
+    display: flex; height: 60px; align-items: center; padding-left: 30px;
+    &.is-disable { display: none; }
+  }
+  &-element {
+    height: 50px; line-height: 50px; padding-left: 30px; position: relative; cursor: pointer; font-size: 13px; border-bottom: 1px solid #e0e0e0; transition: background 0.2s;
+    &:hover {
+      background: #eeeeee; padding-right: 60px;
+      #{$root}-edit-control, #{$root}-remove-control { display: block; }
+    }
+    &:last-child { border-bottom: none; }
+  }
+  &-name { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; margin-right: 20px; }
+  &-remove-control {
+    @include trash-o-icon($icon-color); position: absolute; right: 0; top: -1px; bottom: -1px; width: 40px; display: none; border: solid 1px #e0e0e0; background-size: 14px 14px;;
+    &:hover { @include trash-o-icon(#dc6263); background-size: 14px 14px; background-color: white; }
+  }
+  &-edit-control {
+    @include pencil-icon($icon-color); position: absolute; right: 39px; top: -1px; bottom: -1px; width: 40px; display: none; border: solid 1px #e0e0e0; background-size: 14px 14px;;
+    &:hover { @include pencil-icon(#06c); background-size: 14px 14px; background-color: white; }
+  }
+  &-drop-title { font-size: 12px; text-transform: uppercase; padding: 0 30px; height: 60px; color: #9a9a9a; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e0e0e0; }
+  &-max-count { color: #1f2532; font-weight: bold; }
+}

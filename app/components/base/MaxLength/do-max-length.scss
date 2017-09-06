@@ -1,0 +1,8 @@
+.do-max-length {
+  $b:&;
+  position: relative;
+  &-counter { position: absolute; bottom: 10px; right: 15px; color: #c1c1c1; font-size: 12px; }
+  &.is-input {
+    #{$b}-counter { height: 100%; display: flex; align-items: center;  bottom: 0; top: 0; }
+  }
+}

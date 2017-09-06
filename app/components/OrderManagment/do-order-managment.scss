@@ -1,0 +1,58 @@
+@import '../styles/mixins/icons';
+@import '../styles/const';
+
+.do-order-managment {
+  &-label { margin-right: 7px; color: #61656f; font-size: 13px; }
+  &-box {
+    padding: 20px; border-bottom: 1px solid #e0e0e0;
+    &.is-fast-managment { min-height: 140px; }
+  }
+  &-select {
+    cursor: pointer; padding-right: 15px; display: inline-block; position: relative;
+    &:after { @include angle-down-icon(#028dd8); content: ''; position: absolute; right: 0; width: 13px; height: 13px; top: 3px; }
+  }
+  &-selected {
+    border-bottom: 1px dotted; color: #028dd8; display: inline-block; line-height: 1; cursor: pointer;
+    &:hover { color: #00a6ff; }
+  }
+  &-box-title { font-size: 13px; line-height: 1.2; margin-bottom: 18px; }
+  &-status-box { margin-bottom: 20px; }
+  &-action { margin-right: 20px; border-bottom: 1px dotted; color: #028dd8; }
+
+  &-status {
+    display: flex;
+    &:before { background-color: black; box-shadow: 0 0 4px black; content: ''; width: 6px; height: 6px; border-radius: 10px; margin-right: 8px; margin-top: 6px; }
+    &.is-pending:before { background-color: $pending; box-shadow: 0 0 4px $pending; }
+    &.is-on-delivery:before { background-color: $on-delivery; box-shadow: 0 0 4px $on-delivery; }
+    &.is-waiting:before { background-color: #028dd8; box-shadow: 0 0 4px #028dd8; }
+    &.is-on-process:before { background-color: $on-process; box-shadow: 0 0 4px $on-process; }
+    &.is-viewed:before { background-color: $viewed; box-shadow: 0 0 4px $viewed; }
+    &.is-spam:before { background-color: $spam; box-shadow: 0 0 4px #9a9a9a; }
+    &.is-rejected:before { background-color: $rejected; box-shadow: 0 0 4px $rejected; }
+    &.is-completed:before { background-color: $completed; box-shadow: 0 0 4px $completed; }
+  }
+  &-final-status {
+    font-style: italic; font-size: 13px; background: #f2ffc4; border-left: 1px solid #a3bd49; height: 50px; display: flex; align-items: center; padding-left: 20px; color: #829a3a;
+    &.is-rejected { background: #ffd2d2; color: #c44446; border-color: #dc6263; }
+    &.is-spam { background: #feffdf; color: #ba8c4a; border-color: #ffcd50; }
+  }
+  &-action {
+    cursor: pointer;
+    &.is-reject {
+      color: #dc6263;
+      &:hover { color: #c44446; }
+    }
+  }
+  &-for-customer-status {
+    font-weight: bold; display: inline-block;
+    &.is-pending { color: $pending; }
+    &.is-on-delivery { color: $on-delivery; }
+    &.is-waiting { color: #028dd8; }
+    &.is-on-process { color: $on-process; }
+    &.is-viewed { color: $viewed; }
+    &.is-spam { color: $spam; }
+    &.is-rejected { color: $rejected; }
+    &.is-completed { color: $completed; }
+    &.is-rejected-by-customer { color: $rejected-by-customer; }
+  }
+}

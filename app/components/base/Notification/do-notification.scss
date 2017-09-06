@@ -1,0 +1,6 @@
+.do-notification {
+  background: #eeeeee; padding: 5px 13px 5px 20px; display: flex; border-radius: 5px; word-break: break-all;
+  &-time-box { margin-left: auto; color: #9a9a9a;  white-space: nowrap; }
+  &-date { margin-right: 5px; }
+  &-message { margin-right: 10px; }
+}

@@ -1,0 +1,10 @@
+.do-tabs {
+  box-sizing: border-box;
+  & * { box-sizing: border-box; }
+  &-pane-box { display: flex; align-items: flex-end; }
+  &-pane {
+    margin-right: 9px; background: #f9f9f9; height: 51px; display: flex; align-items: center; padding: 15px; border: 1px solid #e0e0e0; margin-bottom: -1px; transition: all 0.3s; font-size: 13px; cursor: pointer;
+    &.is-active { background: #fff; border-bottom: #fff; }
+  }
+  &-container { background: #fff; border: 1px solid #e0e0e0; padding-top: 20px; }
+}

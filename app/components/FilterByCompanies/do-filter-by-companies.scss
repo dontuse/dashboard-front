@@ -1,0 +1,7 @@
+.do-filter-by-companies {
+  &-company {
+    margin-bottom: 20px; display: flex; align-content: center;
+    &:last-child { margin-bottom: 0; }
+  }
+  &-checkbox { margin-right: 10px; }
+}

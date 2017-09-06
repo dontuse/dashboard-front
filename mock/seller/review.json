@@ -1,0 +1,46 @@
+{
+  "base_type": "order",
+  "body": "fdokvaopkvporek opjaergopj rogpaj gpoeajrg opajergporejg paoegj eprogjreagpoaejg poejrgoperjgaepogjrepogjaepogjeapogjearpgojeragpoaejgpoerajg epaorgajepogajegpoajepgoaejgpaoejgpoejgpeorjg",
+  "company_comments_count": 0,
+  "created_at": "2017-07-23T09:24:41+03:00",
+  "dislikes_count": 0,
+  "id": 112102,
+  "likes_count": 0,
+  "published_on": "everywhere",
+  "rating": 3,
+  "ratings": {
+    "1": "4",
+    "2": "3",
+    "3": "2",
+    "4": "1"
+  },
+  "subject_id": 2055554,
+  "subject_type": "Company",
+  "updated_at": "2017-07-23T09:45:54+03:00",
+  "user_comments_count": 0,
+  "company": {
+    "id": 2055554,
+    "name": "АвиаСталь",
+    "name_rest": "",
+    "main_region_id": 1,
+    "state": "accepted",
+    "html_url": "http://aviastal.test.knife.railsc.ru",
+    "main_region": {
+      "name_lat": "ekb"
+    }
+  },
+  "author": {
+    "id": 3021852,
+    "email": "cu****@***il.com",
+    "primary_provider": "email",
+    "profile": {
+      "id": 2890268,
+      "name": "Никита Простолюдин Игоревич",
+      "contacts": "+79*******75"
+    }
+  },
+  "images": [],
+  "videos": [],
+  "url": "http://www.test.knife.railsc.ru/api/v1/reviews/112102",
+  "type": "Apress::CompanyReviews::Review"
+}

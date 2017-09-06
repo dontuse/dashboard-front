@@ -1,0 +1,9 @@
+@media print {
+  .dashboard-sidebar,
+  .dashboard-header,
+  .dashboard-main-content h1,
+  .do-message-form,
+  .footer {
+    display: none !important;
+  }
+}

@@ -1,0 +1,612 @@
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+<head>
+  <title>Управление заказами - Пульс цен</title>
+  <meta content="" name="description">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="e726002c6225d4c5-741db7100995d040-g9a09809b8bcbbce9-f" name="google-translate-customization">
+  <meta content="app-id=765375626" name="apple-appstore-app">
+  <meta content="app-id=ru.apress.android.pc.mopc" name="google-play-app">
+  <meta content="0" name="barmen-region">
+  <link href="http://www.test.knife.railsc.ru/assets/favicon/favicon-69ef771141614f8998f91928f8c2325b.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+
+  <meta content="http://www.test.knife.railsc.ru/assets/social/pulscen_logo-45f3352adcf4970c7115721853f32441.jpg" property="og:image">
+  <link href="http://www.test.knife.railsc.ru/assets/social/pulscen_logo-45f3352adcf4970c7115721853f32441.jpg" rel="image_src">
+
+  <link href="http://www.test.knife.railsc.ru/assets/standalone/print-948e1ff41c90e656084f962b208095b7.css" media="print" rel="stylesheet" type="text/css" />
+  <link href="http://www.test.knife.railsc.ru/assets/package/common-1eb8f3ac9daae366f0b01abb09e7b846.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://www.test.knife.railsc.ru/assets/package/font_awesome-21014bf4f221976fd4e9683a73c1b62e.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://www.test.knife.railsc.ru/assets/package/dashboard_common-d0ccff0886908f2504238eaa88913790.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://www.test.knife.railsc.ru/assets/package/dashboard-ee0c43a7bd521f0456e68054a204cdc5.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <link href="http://www.test.knife.railsc.ru/assets/package/useful-500e435b8208e23caf55e9006350ef72.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://www.test.knife.railsc.ru/assets/package/orders-8da3b0f7da6fc493bda7987738520872.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <!--[if lte IE 9]>
+  <link href="http://www.test.knife.railsc.ru/assets/package/iefix-7de404632cd36c2c7fe2514c44ee01b5.css" media="screen" rel="stylesheet" type="text/css" />
+  <![endif]-->
+
+  <script>
+  var
+  yaParams = {},
+  _gaq = [],
+  shortHost = "short.test.knife.railsc.ru",
+  assetHost = "http://www.test.knife.railsc.ru/assets/";
+
+  document.getElementsByTagName('html')[0].classList.remove('no-js');
+  </script>
+  <script>
+  var
+  app = app || {
+    utils: {},
+    config: {
+      afIndex: 0,
+      favoritesCompanies: [],
+      rootHost: '.' + "www.test.knife.railsc.ru".replace('www.', ''),
+      mainHost: "www.test.knife.railsc.ru",
+      defaultProtocol: "http",
+      addCompanyUrl: "http://www.test.knife.railsc.ru/firms/new",
+      priceURL: "http://www.test.knife.railsc.ru/about/reklama",
+      analyticsCollectURL: "http://www.test.knife.railsc.ru/api/v1/analytics/collect",
+      myCompaniesDashboardURL: "http://www.test.knife.railsc.ru/dashboard/mycompanies",
+      api: {
+        userManagedCompaniesURL: "http://www.test.knife.railsc.ru/api/v1/users/_id_/companies",
+        clientsURL: "http://www.test.knife.railsc.ru/api/v1/clients",
+        errorMessages: {
+          default: "\u041f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u043f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u044c \u043f\u043e\u043f\u044b\u0442\u043a\u0443."
+        }
+      }
+    }
+  };
+  </script>
+  <script src="http://www.test.knife.railsc.ru/assets/standalone/application/app_extender-106e2964f3f5e1ae23a98c99ddd979d1.js" type="text/javascript"></script>
+
+  <script>
+  app.utils.extendApp({
+    'app.config': {
+      sessionID: "0c5df47ee3d3636cfec08df54709155f",
+      companyPhonesURL: "http://www.test.knife.railsc.ru/company_phones",
+      onlineConsultantPath: '//me-talk.ru/support/support.js?h=9e71060b780fc267cbbfff6f8dec56ba',
+      dataStoreURLMappings: {
+        'measure_units': 'measureUnitsURL',
+        regions: 'regionsURL'
+      }
+    },
+    'app.config.api': {
+      regionsURL: "http://www.test.knife.railsc.ru/api/v1/regions",
+      measureUnitsURL: "http://www.test.knife.railsc.ru/api/v1/measure_units",
+      customerCartCartItemsURL: "http://www.test.knife.railsc.ru/api/v1/customer/cart/items",
+      customerCartCartItemURL: "http://www.test.knife.railsc.ru/api/v1/customer/cart/items/_id_",
+      customerCartOrderPlaceURL: "http://www.test.knife.railsc.ru/api/v1/customer/cart/orders/_id_/place",
+      customerCartURL: "http://www.test.knife.railsc.ru/api/v1/customer/cart",
+      customerCartOrdersURL: "http://www.test.knife.railsc.ru/api/v1/customer/cart/orders",
+    },
+    'app.modules': {
+      applicationUtils: {},
+      coreApplicationBase: {},
+      application: {},
+      phoneMask: {},
+      main: {}
+    }
+  });
+  </script>
+
+  <script>
+  app.utils.extendApp({
+    'app.config': {
+      usersSessionURL: "http://www.test.knife.railsc.ru/users/session",
+      usersRegistrationURL: "http://www.test.knife.railsc.ru/users",
+      crossDomainIframe: "http://www.test.knife.railsc.ru/crossdomain_authentication",
+      ssoUsersSessionRequestURL: "http://www.test.knife.railsc.ru/users/session/request",
+      ssoUsersSessionHandleSigninURL: "http://www.test.knife.railsc.ru/users/session/handle_signin"
+    },
+    'app.config.api': {
+      validationURL: "http://www.test.knife.railsc.ru/api/v1/validation"
+    }
+  });
+  </script>
+
+  <script>
+  app.utils.extendApp({
+    'app.config': {
+      crossDomainAuth: false,
+      isUserSigned: true
+    },
+    'app.config.currentUser': {
+      id: 32347,
+      primaryProvider: "email",
+      withName: true
+    },
+    'app.config.api': {
+      passwordURL: "http://www.test.knife.railsc.ru/api/v1/users/password",
+      usersURL: "http://www.test.knife.railsc.ru/api/v1/users",
+      updateUserURL: "http://www.test.knife.railsc.ru/api/v1/users/_id_",
+      authCodeURL: "http://www.test.knife.railsc.ru/api/v1/users/auth_code",
+      mergesURL: "http://www.test.knife.railsc.ru/api/v1/users/merges",
+    },
+    'app.config.api.errorMessages': {
+      401: "\u041d\u0435\u0432\u0435\u0440\u043d\u044b\u0439 \u043b\u043e\u0433\u0438\u043d \u0438\u043b\u0438 \u043f\u0430\u0440\u043e\u043b\u044c",
+      403: "\u041d\u0435\u0432\u0435\u0440\u043d\u044b\u0439 \u043b\u043e\u0433\u0438\u043d \u0438\u043b\u0438 \u043f\u0430\u0440\u043e\u043b\u044c"
+    }
+  });
+  </script>
+
+  <script>
+  app.config.api.customerCartCartItemsURL = "http://www.test.knife.railsc.ru/api/v1/customer/cart/items";
+  app.config.api.customerCartCartItemURL = "http://www.test.knife.railsc.ru/api/v1/customer/cart/items/_id_";
+  app.config.api.customerCartOrderPlaceURL = "http://www.test.knife.railsc.ru/api/v1/customer/cart/orders/_id_/place";
+  app.config.api.customerCartURL = "http://www.test.knife.railsc.ru/api/v1/customer/cart";
+  app.config.api.customerCartOrdersURL = "http://www.test.knife.railsc.ru/api/v1/customer/cart/orders";
+  app.config.api.sellerCartURL = "http://www.test.knife.railsc.ru/api/v1/seller/cart";
+  app.config.api.sellerCartOrdersURL = "http://www.test.knife.railsc.ru/api/v1/seller/cart/orders";
+  app.config.api.sellerOrdersURL = "http://www.test.knife.railsc.ru/api/v1/seller/orders?user_id=:user_id&details_view=1";
+
+  app.config.sellerCartOrderURL = "http://www.test.knife.railsc.ru/dashboard/seller/cart/orders/:order_id";
+  </script>
+
+  <script>
+  app.utils.extendApp({
+    'app.config.authComponent': {
+      data: {
+        messages: {
+          invalidPasswordErrorMessage: "\u041f\u0430\u0440\u043e\u043b\u044c \u0434\u043e\u043b\u0436\u0435\u043d \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u043d\u0435 \u043c\u0435\u043d\u0435\u0435 4 \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432"
+        }
+      },
+      content: {
+        signIn: {
+          title: "\u0412\u0445\u043e\u0434",
+          buttonText: "\u0412\u043e\u0439\u0442\u0438"
+        },
+        signUp: {
+          title: "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f",
+          tip: "\u041d\u0430\u0436\u0438\u043c\u0430\u044f \"%buttonText%\", \u0432\u044b \u0434\u0430\u0435\u0442\u0435 \u0441\u043e\u0433\u043b\u0430\u0441\u0438\u0435 \u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0443 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445 \u0432\n\u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 <a href=\"http://www.test.knife.railsc.ru/about/privacy\" target=\"_blank\">\u043f\u043e\u043b\u0438\u0442\u0438\u043a\u043e\u0439 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438</a> \u0438\n\u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442\u0435 \u0443\u0441\u043b\u043e\u0432\u0438\u044f <a href=\"http://www.test.knife.railsc.ru/about/terms\" target=\"_blank\">\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u0441\u043e\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u044f<a>.\n",
+          buttonText: "\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f"
+        },
+        common: {
+          title: "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435",
+          tip: "\u041d\u0430\u0436\u0438\u043c\u0430\u044f \"%buttonText%\", \u0432\u044b \u0434\u0430\u0435\u0442\u0435 \u0441\u043e\u0433\u043b\u0430\u0441\u0438\u0435 \u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0443 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445 \u0432\n\u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 <a href=\"http://www.test.knife.railsc.ru/about/privacy\" target=\"_blank\">\u043f\u043e\u043b\u0438\u0442\u0438\u043a\u043e\u0439 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438</a> \u0438\n\u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442\u0435 \u0443\u0441\u043b\u043e\u0432\u0438\u044f <a href=\"http://www.test.knife.railsc.ru/about/terms\" target=\"_blank\">\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u0441\u043e\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u044f<a>.\n",
+          buttonText: "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"
+        }
+      }
+    }
+  });
+  </script>
+
+
+
+
+</head>
+<script>
+var app = app || {};
+app.modules.barmen = {
+  load: function() {
+    if (false && !$.cookie('hide_mobile_barmen_float')) {
+      $('.js-barmen-float-content').attr({'data-barmen': 'banner-float'}).closest('.js-barmen-float').show();
+    }
+    app.modules.barmen = new Barmen({
+      apiUrl: "https://api.barmen.test-pulscen.ru/v1",
+      isMobile: false
+    });
+  }
+};
+</script>
+
+<body class="dashboard-page js-body pulscen">
+
+  <noscript>
+    <iframe class="dn vh" height="0" src="//www.googletagmanager.com/ns.html?id=GTM-ZV5S" width="0"></iframe>
+  </noscript>
+  <script>
+  (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    });
+
+    var
+    f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s),
+    dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-ZV5S');
+  </script>
+
+
+  <div class="wrapper-site js-wrapper-site">
+    <div class="edit-mode main-content-wrapper">
+
+      <div class="top-helper js-top-helper">
+        <div class="js-product-bindings-fix-indent js-toolbar toolbar toolbar-portal" id="toolbar"></div>
+      </div>
+
+
+
+      <div class="base-width js-base-width">
+
+
+        <div class="clearfix js-content-portal" id="content">
+          <div class="dashboard-wrapper default-view expanded-view js-dashboard-wrapper">
+            <div class="dashboard-header"><div class="profile-info">
+              <a href="http://www.test.knife.railsc.ru/dashboard/profile"><div class="pi-col">
+                <div class="avatar-blank-icon round"></div>
+              </div><div class="pi-col">Отдел оптовых продаж</div>
+            </a>
+          </div>
+
+          <h1>
+            <a href="http://www.test.knife.railsc.ru/dashboard/mycompanies">
+              <span>Личный кабинет</span>
+              <i class="home-icon" title="На главную"></i>
+            </a>
+          </h1>
+
+          <nav>
+            <ul class="simple-list sil-mod-hm-40">
+              <li class='sil-item'><a href="http://www.test.knife.railsc.ru/dashboard/profile" class="top-menu-item">Личные данные</a></li>
+              <li class='sil-item'><a href="http://www.test.knife.railsc.ru/dashboard/mycompanies" class="top-menu-item">Мои компании</a></li>
+              <li class="sil-item">
+                <span class="top-menu-item js-qtip-icon" data-content='&lt;div class="qtip-content-wrapper"&gt;&lt;table align="left" border="0" cellpadding="1" cellspacing="1" height="47" width="321"&gt;&#x000A;	&lt;tbody&gt;&#x000A;		&lt;tr&gt;&#x000A;			&lt;td style="text-align: left; vertical-align: top;padding-bottom:10px;"&gt;&#x000A;				&lt;span style="font-size:12px;"&gt;&lt;img alt="" src="http://www.test.knife.railsc.ru/system/ckeditor_assets/pictures/67234/content_phone.png?1410153079" style="width: 19px; height: 19px;" /&gt;&lt;/span&gt;&lt;/td&gt;&#x000A;			&lt;td style="text-align: left; vertical-align: top;padding-bottom:10px;line-height:130%;"&gt;&#x000A;				8-800-100-91-91&lt;br /&gt;&#x000A;				(звонок по РФ бесплатный)&lt;/td&gt;&#x000A;		&lt;/tr&gt;&#x000A;		&lt;tr&gt;&#x000A;			&lt;td&gt;&#x000A;				&lt;img alt="" src="http://www.test.knife.railsc.ru/system/ckeditor_assets/pictures/67235/content_email.png?1410153087" /&gt;&lt;/td&gt;&#x000A;			&lt;td&gt;&#x000A;				&lt;a href="mailto:support@pulscen.ru" target="_blank"&gt;support@pulscen.ru&lt;/a&gt;&lt;/td&gt;&#x000A;		&lt;/tr&gt;&#x000A;	&lt;/tbody&gt;&#x000A;&lt;/table&gt;&#x000A;&lt;p&gt;&#x000A;	&amp;nbsp;&lt;/p&gt;&#x000A;&lt;/div&gt;' data-hide='{"event":"click unfocus"}' data-position='{"my":"top center","at":"bottom center"}' data-show='{"event":"click"}' data-style='{"classes":"qtip-light qtip-shadow custom-type"}'>
+                  Обратная связь
+                </span>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+        <div class="dashboard-body">
+          <div class="dashboard-content">
+            <div class="dashboard-sidebar js-dashboard-sidebar">
+              <ul class="simple-list vertical sil-mod-vm-0">
+                <li class='active sil-item with-counter'><a href="http://www.test.knife.railsc.ru/dashboard/seller/orders" class="main-menu-item  seller-orders">Управление заказами<span class='counter-item solid ci-mod-color-orange ci-mod-plus ci-mod-plr-5 '><span title="Новые заказы">4</span>
+                  /
+                  <span title="Новые комментарии">
+                    5
+                  </span>
+                </span></a></li>
+                <ul class="simple-list vertical sil-mod-vm-0">
+                  <li class="orders-menu-item">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/seller/orders?folder=pending">Новые</a>
+                  </li>
+                  <li class="orders-menu-item">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/seller/orders?folder=on_process">В работе</a>
+                  </li>
+                  <li class="orders-menu-item">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/seller/orders?folder=completed">Выполненные</a>
+                  </li>
+                  <li class="orders-menu-item">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/seller/orders?folder=rejected">Отмененные</a>
+                  </li>
+                  <li class="orders-menu-item">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/seller/orders?folder=spam">Спам</a>
+                  </li>
+                  <li class="orders-menu-item">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/seller/orders?folder=expired">Просрочено</a>
+                  </li>
+                  <li class="orders-menu-item">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/seller/orders?folder=archived">Архив</a>
+                  </li>
+
+
+                  <li class="orders-menu-item">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/seller/cart">
+                      Отложенные в корзину
+                    </a>
+                  </li>
+
+                </ul>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/users/32347/seller/reviews" class="main-menu-item  control-reviews">Управление отзывами</a></li>
+
+                <li class='sil-item with-counter'><a href="http://www.test.knife.railsc.ru/dashboard/customer/orders" class="main-menu-item  customer-order">Мои покупки</a></li>
+                <ul class="simple-list vertical sil-mod-vm-0">
+                  <li class="orders-menu-item orders-menu-item-with-label">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/customer/cart">
+                      Корзина
+                    </a>
+                  </li>
+                </ul>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/users/32347/tenders" class="main-menu-item  tenders">Мой спрос</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/reviews" class="main-menu-item  my-reviews">Мои отзывы</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/comments" class="main-menu-item  my-comments">Мои комментарии</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/subscriptions" class="main-menu-item  subscriptions">Мои подписки</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/favorites" class="main-menu-item  favorite-companies">Сохраненные поставщики</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/compare" class="main-menu-item  compare-products with-counter">Сравнение товаров</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/dialogs" class="main-menu-item  dialogs">Архив Мои сообщения</a></li>
+
+              </ul>
+
+              <i class="switch-icon js-switch-sidebars" data-switch-to-type="compressed" title="Свернуть меню"></i>
+            </div>
+
+            <div class="compressed-type dashboard-sidebar js-compressed-dashboard-sidebar js-dashboard-sidebar">
+              <ul class="hide-sublists sil-mod-vm-0 simple-list vertical">
+                <li class='active sil-item with-counter'><a href="http://www.test.knife.railsc.ru/dashboard/seller/orders" class="main-menu-item with-icon seller-orders" title="Управление заказами">Управление заказами<span class='counter-item solid ci-mod-color-orange ci-mod-plus ci-mod-plr-5 ci-mod-plr-1'><span title="Новые заказы">4</span>
+                  /
+                  <span title="Новые комментарии">
+                    5
+                  </span>
+                </span></a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/users/32347/seller/reviews" class="main-menu-item with-icon control-reviews" title="Управление отзывами">Управление отзывами</a></li>
+
+                <li class='sil-item with-counter'><a href="http://www.test.knife.railsc.ru/dashboard/customer/orders" class="main-menu-item with-icon customer-order" title="Мои покупки">Мои покупки</a></li>
+                <ul class="simple-list vertical sil-mod-vm-0">
+                  <li class="orders-menu-item orders-menu-item-with-label">
+                    <a class="orders-menu-item-link" href="http://www.test.knife.railsc.ru/dashboard/customer/cart">
+                      Корзина
+                    </a>
+                  </li>
+                </ul>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/users/32347/tenders" class="main-menu-item with-icon tenders" title="Мой спрос">Мой спрос</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/reviews" class="main-menu-item with-icon my-reviews" title="Мои отзывы">Мои отзывы</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/comments" class="main-menu-item with-icon my-comments" title="Мои комментарии">Мои комментарии</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/subscriptions" class="main-menu-item with-icon subscriptions" title="Мои подписки">Мои подписки</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/favorites" class="main-menu-item with-icon favorite-companies" title="Сохраненные поставщики">Сохраненные поставщики</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/compare" class="main-menu-item with-icon compare-products with-counter" title="Сравнение товаров">Сравнение товаров</a></li>
+
+                <li class='sil-item '><a href="http://www.test.knife.railsc.ru/dashboard/dialogs" class="main-menu-item with-icon dialogs" title="Архив Мои сообщения">Архив Мои сообщения</a></li>
+
+              </ul>
+
+              <i class="js-switch-sidebars pressed switch-icon" data-switch-to-type="expanded" title="Развернуть меню"></i>
+            </div>
+
+            <div class="dashboard-main-content clearfix">
+
+              <h1>
+                Управление заказами
+                <a href="http://www.test.knife.railsc.ru/about/site/orders" class="title-link with-icon question-icon js-ga-link" data-ga-id="1317" target="_blank">Инструкция</a><a href="http://www.test.knife.railsc.ru/about/site/faq_sellers" class="title-link with-icon question-icon" target="_blank">Часто задаваемые вопросы</a>
+              </h1>
+
+              <script>
+              app.config.orders = {
+                closeText: "\u0417\u0430\u043a\u0440\u044b\u0442\u044c",
+                commentsList: {"show_more":"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0432\u0441\u044e \u043f\u0435\u0440\u0435\u043f\u0438\u0441\u043a\u0443","show_less":"\u0421\u043a\u0440\u044b\u0442\u044c"}
+              };
+              </script>
+              <div id="root" class=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="f-helper js-f-helper"></div>
+  </div>
+</div>
+<div class="f-container clearfix js-f-container">
+  <div class="footer js-footer clearfix">
+    <div class="footer-col-left">
+      <div class="fcl-left">
+        <span class="regions-in-footer js-show-regions-popup">
+          <span class="fc-region choose-region-link js-pl-region js-ga-link" data-ga-id="1132">в РОССИИ</span>
+        </span>
+        <p class="fc-stat">
+          <span class="fcs-num">17950</span>
+          компаний
+        </p>
+        <p class="fc-stat">
+          <span class="fcs-num">73149</span>
+          товаров и услуг
+        </p>
+        <p class="fc-stat"></p>
+        <a class="js-toggle-version" data-mobile="1" href="#">Мобильная версия сайта</a>
+        <div class="fc-wrap clearfix">
+          <div class="fcw-age">16+</div>
+        </div>
+      </div>
+      <div class="fcl-right">
+        <div class="footer-col">
+          <div class="fc-header js-fc-header">Покупателям</div>
+          <nav>
+            <ul class="fc-items">
+              <li class="fci-item">
+                <span class="fcii-link js-ga-link" data-ga-id="1200" data-to="http://www.test.knife.railsc.ru/price">Товары и услуги</span>
+              </li>
+              <li class="fci-item">
+                <span class="fcii-link js-ga-link" data-ga-id="1201" data-to="http://www.test.knife.railsc.ru/firms">Каталог компаний</span>
+              </li>
+              <li class="fci-item">
+                <span class="fcii-link js-ga-link" data-ga-id="PC4-20065-1" data-to="http://www.test.knife.railsc.ru/dashboard/tenders/new">
+                  Добавить спрос
+                </span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <div class="fc-header js-fc-header">Поставщикам</div>
+          <nav>
+            <ul class="fc-items js-fc-items-col3">
+              <li class="fci-item">
+                <span class="fcii-link js-ga-link" data-ga-id="1202" data-to="http://www.test.knife.railsc.ru/about/banner">Разместить баннер</span>
+              </li>
+              <li class="fci-item">
+                <span class="fcii-link js-ga-link" data-ga-id="1203" data-to="http://www.test.knife.railsc.ru/about/reklama">Сравнить платные пакеты</span>
+              </li>
+              <li class="fci-item">
+                <span class="fcii-link js-ga-link" data-ga-id="1208" data-to="http://www.test.knife.railsc.ru/about/success-story">Отзывы о сайте</span>
+              </li>
+              <li class="fci-item">
+                <span class="fcii-link js-ga-link" data-ga-id="1281" data-to="http://www.test.knife.railsc.ru/tenders">Заявки спроса</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="footer-col-right">
+      <div class="footer-col fcr-left">
+        <div class="fc-header js-fc-header">О нас</div>
+        <nav>
+          <ul class="fc-items">
+            <li class="fci-item">
+              <span class="fcii-link js-ga-link" data-ga-id="1204" data-to="http://www.test.knife.railsc.ru/about">О проекте</span>
+            </li>
+            <li class="fci-item">
+              <span class="fcii-link js-ga-link" data-ga-id="1205" data-to="http://www.test.knife.railsc.ru/about/vacancies">Вакансии</span>
+            </li>
+            <li class="fci-item">
+              <span class="fcii-link js-ga-link" data-ga-id="1206" data-to="http://www.test.knife.railsc.ru/about/webinar-pc">Расписание вебинаров</span>
+            </li>
+            <li class="fci-item">
+              <span class="fcii-link js-ga-link" data-ga-id="1207" data-to="http://www.test.knife.railsc.ru/about/terms">Пользовательское соглашение</span>
+            </li>
+            <li class="fci-item">
+              <span class="fcii-link" data-target="_blank" data-to="http://www.test.knife.railsc.ru/about/privacy">Политика конфиденциальности</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-col fcr-right">
+        <div class="fc-header js-fc-header">Обратная связь</div>
+        <nav>
+          <ul class="fc-items">
+            <li class="fci-item">
+              <span class="fcii-link js-ga-link" data-ga-id="1209" data-to="http://www.test.knife.railsc.ru/complaint?from_url=http://www.test.knife.railsc.ru/dashboard/seller/orders">Пожаловаться на содержимое</span>
+            </li>
+            <li class="fci-item">
+              <span class="fcii-link js-ga-link" data-ga-id="1210" data-to="http://www.test.knife.railsc.ru/opinion?from_url=http://www.test.knife.railsc.ru/dashboard/seller/orders">Написать в Пульс цен</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a class="footer-logo" href="http://www.apress.ru">
+        <img alt="Медиахолдинг «АБАК-ПРЕСС»" class="logo" src="http://www.test.knife.railsc.ru/assets/apress_25-411db50214bdb48035a8a30cc59630bc.png">
+      </a>
+      <nav class="fb-items">
+        <span class="copyright">©</span>
+        <a href="http://www.apress.ru/" class="fbi-item">Медиахолдинг «АБАК-ПРЕСС»
+        </a><a href="http://www.blizko.ru" class="fbi-item" target="_blank">BLIZKO.ru
+        </a><a href="http://www.dk.ru/" class="fbi-item" target="_blank">Последние новости дня в России
+        </a><a href="http://www.yapokupayu.ru/" class="fbi-item" target="_blank">Портал &quot;Я Покупаю&quot;
+        </a></nav>
+        <div class="fb-services">
+          <div class="share-cover">
+            <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter" data-yashareType="small" id="yashare-links"></div>
+          </div>
+
+          <span class="app-store-logo js-ga-link" data-ga-id="PC4-16346-1" data-target="_blank" data-to="https://itunes.apple.com/us/app/pul-s-cen/id765375626"></span>
+          <span class="google-play-logo js-ga-link" data-ga-id="PC4-16346-2" data-target="_blank" data-to="https://play.google.com/store/apps/details?id=ru.apress.android.pc.mopc&amp;hl=ru"></span>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="popup unsub dn" id="popup-container">
+  <div class="popup-new">
+    <div class="cover-popup"></div>
+    <div id="popup-content"></div>
+    <div class="close-popup-icon js-p-close"></div>
+  </div>
+</div>
+<script defer src="//yandex.st/jquery/1.11.0/jquery.min.js"></script>
+<script defer="defer" src="http://www.test.knife.railsc.ru/assets/standalone/core.jquery-migrate-95d03d5c8a0e9ae55dbaf50e6381df29.js" type="text/javascript"></script>
+
+<script defer="defer" src="http://www.test.knife.railsc.ru/assets/standalone/google_analytics_var-09f3bfef776559305004df5481ecca31.js" type="text/javascript"></script>
+<script defer="defer" src="http://www.test.knife.railsc.ru/assets/standalone/jquery_ujs-28bf26ba1502c6c27a5483746fb6ec77.js" type="text/javascript"></script>
+<script defer="defer" src="http://www.test.knife.railsc.ru/assets/package/auth-5a098f017a242e7411ea0f6c4dcfa383.js" type="text/javascript"></script>
+<script defer="defer" src="http://www.test.knife.railsc.ru/assets/package/portal_base-5f0065f196f188d5e7004cfc676671dc.js" type="text/javascript"></script>
+<script defer="defer" src="http://www.test.knife.railsc.ru/assets/package/common_base-f69933ea7ccacd544d1c3d8533921379.js" type="text/javascript"></script>
+<script defer="defer" src="http://www.test.knife.railsc.ru/assets/package/dashboard_common-75eec3407e19ae7791709c0c35b9a189.js" type="text/javascript"></script>
+
+<script defer="defer" src="http://www.test.knife.railsc.ru/assets/package/orders-e15a01cf55a7b428b7a89efbc576d6f8.js" type="text/javascript"></script>
+<script>
+function add_toolbar_return_path(element, path) {
+  if(element && element.length) element.attr('href', path);
+}
+// function add_toolbar_return_paths() {
+//   add_toolbar_return_path(
+//     $('#toolbar_sign_in_link'),
+//     'http://www.test.knife.railsc.ru/users/session/request?return_to=return_to_url'.replace(/return_to_url/,
+//       window.location.href)
+//     );
+//     add_toolbar_return_path(
+//       $('#toolbar_sign_up_link'),
+//       'http://www.test.knife.railsc.ru/users/new?return_to=return_to_url'.replace(/return_to_url/,
+//         window.location.href))
+//         ;
+//       }
+//       </script>
+//
+//       <script>
+//       app.config.regionsPopup = {options: {"only_url":true,"force_root_url":true,"remove_link":true}, url: "http://www.test.knife.railsc.ru/regions_popup"};
+//       app.config.remindersPopup = {
+//         ordersUrl: "http://www.test.knife.railsc.ru/dashboard/seller/orders/:order_id",
+//         ordersWithRemindersUrl: "http://www.test.knife.railsc.ru/dashboard/seller/orders?reminds%5Bstatus%5D%5B%5D=overdue"
+//       };
+//
+//       function update_online_status() {
+//         $.post("http://www.test.knife.railsc.ru/dashboard/online");
+//         window.setTimeout(update_online_status, 480 * 1000);
+//       };
+//       </script>
+//       <script>
+//       app.modules.main = app.modules.main || {};
+//       app.modules.main.load = function() {
+//         $.ajax({
+//           type: 'get',
+//           url: "http://www.test.knife.railsc.ru/toolbar?return_to=http%3A%2F%2Fwww.test.knife.railsc.ru%2Fdashboard%2Fseller%2Forders&show_logo=true",
+//           data: {
+//             rubric_id: null,
+//             format: 'html'
+//           },
+//           success: function(response) {
+//             $('.js-toolbar').html(response);
+//             $doc.trigger('ajax-toolbar-complete');
+//             $('.js-orders-cart-provider')
+//             .trigger('updateCounter:ordersCartProvider', [$('.js-orders-cart-counter-container')]);
+//           },
+//           complete: function() {
+//             add_toolbar_return_paths();
+//           }
+//         });
+//
+//         $.getScript('https://yandex.st/share/share.js');
+//         // ссылка "добавить компанию, товары прайс-лист"
+//         $('.js-fc-items-col3').prepend("<li class=\"fci-item\">\n<span class=\"fcii-link fcii-add js-footer-link-button-add-price js-ga-link\" data-ga-id=\"1059\" data-to=\"#\">\n\u0420\u0430\u0437\u043c\u0435\u0441\u0442\u0438\u0442\u044c \u0442\u043e\u0432\u0430\u0440\u044b \u0438 \u0443\u0441\u043b\u0443\u0433\u0438\n</span>\n</li>\n");
+//
+//
+//         showRegionsPopupNew();
+//         update_online_status();
+//       }
+//       </script>
+//
+//
+//
+//       <script async src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+//       <noscript>
+//         <div class="di">
+//           <img alt="" class="no-border" height="1" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/860223419/?guid=ON&amp;amp;script=0" width="1">
+//         </div>
+//       </noscript>
+
+
+
+    </body>
+    </html>

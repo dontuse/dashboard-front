@@ -1,0 +1,6 @@
+.do-order-card-app {
+  position: relative;
+  &-lock {
+    background: rgba(0,0,0,0.6); position: absolute; top:0; left: 0; right: 0; bottom: 0; z-index: 111; transition: all 0.4s;
+  }
+}

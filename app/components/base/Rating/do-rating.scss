@@ -1,0 +1,9 @@
+@import '../../styles/mixins/icons';
+
+.do-rating {
+  display: flex;
+  &-star {
+    @include star-o-icon(#ffcd50); flex: 0 0 16px; height: 16px; margin-right: 5px;
+    &.is-active { @include star-icon(#ffcd50); }
+  }
+}

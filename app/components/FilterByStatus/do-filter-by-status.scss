@@ -1,0 +1,23 @@
+@import '../styles/const';
+
+.do-filter-by-status {
+  &-status {
+    margin-bottom: 20px; display: flex; align-content: center;
+    &:last-child { margin-bottom: 0; }
+    &:after { background-color: black; box-shadow: 0 0 4px black; content: ''; width: 6px; height: 6px; border-radius: 10px; margin-left: 8px; margin-top: 6px; }
+    &.is-pending:after { background-color: $pending; box-shadow: 0 0 4px $pending; }
+    &.is-on-delivery:after { background-color: $on-delivery; box-shadow: 0 0 4px $on-delivery; }
+    &.is-waiting:after { background-color: $waiting; box-shadow: 0 0 4px $waiting; }
+    &.is-on-process:after { background-color: $on-process; box-shadow: 0 0 4px $on-process; }
+    &.is-viewed:after { background-color: $viewed; box-shadow: 0 0 4px $viewed; }
+    &.is-spam:after { background-color: $spam; box-shadow: 0 0 4px #9a9a9a; }
+    &.is-rejected:after { background-color: $rejected; box-shadow: 0 0 4px $rejected; }
+    &.is-rejected-by-customer:after { background-color: $rejected-by-customer; box-shadow: 0 0 4px $rejected-by-customer; }
+    &.is-viewed-by-customer:after { background-color: $viewed-by-customer; box-shadow: 0 0 4px $viewed-by-customer; }
+    &.is-on-process:after { background-color: $on-process; box-shadow: 0 0 4px $on-process; }
+    &.is-on-consideration:after { background-color: $on-consideration; box-shadow: 0 0 4px $on-consideration; }
+    &.is-archived:after { background-color: $archived; box-shadow: 0 0 4px #9a9a9a; }
+    &.is-completed:after { background-color: $completed; box-shadow: 0 0 4px $completed; }
+  }
+  &-checkbox { margin-right: 10px; }
+}

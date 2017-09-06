@@ -1,0 +1,15 @@
+@import '../styles/mixins/icons';
+
+.do-user-profile {
+  border: solid 1px #e0e0e0; border-radius: 5px; padding: 15px 20px; display: flex; align-items: center; color: #61656f; font-size: 13px;
+  &-property {
+    margin-right: 20px;
+    &.is-phone { white-space: nowrap; }
+  }
+  &-photo {
+    width: 50px; height: 50px;  overflow: hidden; border-radius: 100px;  background-color: #f9f9f9; background-size: cover; background-position: center; align-items: center; border: solid 1px #e0e0e0;
+    &.is-not:after {
+      @include fa-user-icon(#c1c1c1); content: ''; width: 23px; height: 25px; display: block; margin: 0 auto; position: relative; top: 10px;
+    }
+  }
+}

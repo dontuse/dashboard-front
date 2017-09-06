@@ -1,0 +1,19 @@
+@import '../styles/mixins/icons';
+
+.do-order {
+  display: flex; font-family: 'OpenSans'; color: #61656f; font-size: 12px;
+  & * { box-sizing: border-box; }
+  &-aside { flex: 0 0 280px; width: 280px; background: #ffffff; }
+  &-main { width: 100%; margin-right: 10px; }
+  &-header { background: #ffffff; margin-bottom: 20px; }
+  &-title { font-size: 18px; line-height: 1; color: #333333; }
+  &-title-box { display: flex; padding: 20px; align-items: baseline; }
+  &-type { margin-left: 5px; }
+  &-box { margin: 0 20px 20px; }
+  &-icon-box { margin-left: auto;  display: flex; justify-content: space-around; align-items: center; }
+  &-print {
+     @include print-md-icon(#9a9a9a); width: 20px; height: 16px; cursor: pointer;
+     &:hover { @include print-md-icon(#028dd8); }
+  }
+  &.is-locked { filter: blur(2px); }
+}

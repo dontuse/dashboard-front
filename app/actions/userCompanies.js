@@ -1,0 +1,19 @@
+export const ORDERS_USER_COMPANIES_GET = 'ORDERS_USER_COMPANIES_GET';
+export const ORDERS_USER_COMPANIES_REQUEST_START = 'ORDERS_USER_COMPANIES_REQUEST_START';
+export const ORDERS_USER_COMPANIES_REQUEST_SUCCESS = 'ORDERS_USER_COMPANIES_REQUEST_SUCCESS';
+export const ORDERS_USER_COMPANIES_REQUEST_ERROR = 'ORDERS_USER_COMPANIES_REQUEST_ERROR';
+
+export const get = data => ({
+  type: ORDERS_USER_COMPANIES_GET,
+  payload: data,
+});
+
+export const getStart = data => ({
+  type: ORDERS_USER_COMPANIES_REQUEST_START,
+  payload: data,
+});
+
+export const getDone = data => ({
+  type: ORDERS_USER_COMPANIES_REQUEST_SUCCESS,
+  payload: data,
+});

@@ -1,0 +1,5 @@
+.do-option {
+  height: 40px;  display: flex; align-items: center; margin: 0 -30px; padding-left: 30px; cursor: pointer;
+  &:last-child { margin-bottom: -20px; }
+  &:hover { background: #eeeeee; }
+}

@@ -1,0 +1,13 @@
+@import '../styles/mixins/icons';
+
+.do-filter-by-call {
+  &-type {
+    margin-bottom: 20px; display: flex; align-content: center;
+    &:last-child { margin-bottom: 0; }
+    &:after { display: inline-block; content: ''; width: 12px; height: 12px; margin-left: 5px; margin-top: 3px; }
+    &.is-active:after {  @include clock-o-icon(#028dd8); }
+    &.is-overdue:after {  @include clock-o-icon(#dc6263); }
+    &.is-canceled:after {  @include clock-o-icon(#9a9a9a); }
+  }
+  &-checkbox { margin-right: 10px; }
+}
